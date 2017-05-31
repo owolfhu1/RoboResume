@@ -24,7 +24,6 @@ public class RoboResume {
 			
 		} while (name == null);
 		
-		//prompt for email
 		System.out.printf("Hello %s, please enter your email: ", name);
 		
 		do {
@@ -38,12 +37,12 @@ public class RoboResume {
 			
 		} while (email == null);
 		
-		System.out.printf("Ok %s, with email: %s, lets enter some education (enter a blank line to move onto work history):\n ", name, email);
+		System.out.printf("Ok %s, with email: %s, lets enter some education (enter a blank line to move onto work history):\n", name, email);
 		
-		for (int i = 0; i < 10; i++){
+		for (int i = 0; i < 10; i++) {
 			String temp = scan.nextLine();
-			if (temp.equals("")){
-				if (education.isEmpty()){
+			if (temp.equals("")) {
+				if (education.isEmpty()) {
 					System.out.println("You must enter at least one education field: ");
 					i = 0;
 				} else {
@@ -55,13 +54,68 @@ public class RoboResume {
 		}
 		
 		System.out.println("you have entered: ");
-		for (String edu : education){
+		for (String edu : education) {
 			System.out.println(edu);
 		}
+		System.out.println("Now enter your work history(blank line to move on to skills): ");
 		
+		for (int i = 0; i < 10; i++) {
+			String temp = scan.nextLine();
+			if (temp.equals("")) {
+				i = 10;
+			} else {
+				work.add(temp);
+			}
+		}
 		
+		System.out.println("you have entered: ");
+		for (String w : work) {
+			System.out.println(w);
+		}
 		
+		System.out.println("Now you may enter your skills (again, blank line to move on): ");
 		
+		for (int i = 0; i < 20; i++){
+			String temp = scan.nextLine();
+			if (temp.equals("")) {
+				if (skills.isEmpty()) {
+					System.out.println("You must enter at least one skill: ");
+					i = 0;
+				} else {
+					i = 20;
+				}
+			} else {
+				skills.add(temp);
+			}
+		}
+		
+		System.out.println("you have entered: ");
+		for (String skill : skills) {
+			System.out.println(skill);
+		}
+		
+		System.out.println("Press return to print out resume.");
+		scan.nextLine();
+		System.out.println("=============================================================");
+		System.out.println(name);
+		System.out.printf("%s \n\n", email);
+		System.out.println("EDUCATION:");
+		for (String edu : education) {
+			System.out.printf("%s \n\n", edu);
+		}
+		if (!work.isEmpty()){
+			System.out.println("WORK:");
+			for (String w : work) {
+				System.out.printf("%s \n\n", w);
+			}
+		}
+		System.out.println("SKILLS:");
+		for (String skill : skills) {
+			System.out.println(skill);
+		}
+		System.out.println("=============================================================");
+		
+		scan.close();
 	}
 	
 }
