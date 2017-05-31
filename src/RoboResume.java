@@ -124,6 +124,28 @@ public class RoboResume {
 
 /*
 
+###IPO###
+
+INPUT:
+-a name
+-an email
+-up to 10 edu entries
+-up to 10 work entries, at least 1
+-up to 20 skills, at least 1
+
+PROCESSES:
+-get input
+-save input in strings, lists
+-print to screen
+
+OUTPUT:
+-Prompts for inputs
+-displays all inputs at the end in a resume format
+
+
+
+
+
 Robo Resume Assignment
    
 Write a program that will allow a user to enter in:
